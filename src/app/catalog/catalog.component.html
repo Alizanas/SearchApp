@@ -1,0 +1,36 @@
+<div class="row">
+    <div class= "col-12">
+        <div class="card-columns">
+            <div id="i" class="card" *ngFor="let recipe of recipes; let i = index">
+                <img [src]="recipe.thumbnail != '' ? recipe.thumbnail :'./assets/recipe.jpg'" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ recipe.title }}</h5>
+                    <p class="card-text">{{ recipe.ingredients }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-md" (click)="open(content, recipe)">Previsualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{ recipePreview.title }}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe id="frameWeb"
+            title="Inline Frame Web Recipe"
+            [src]="recipePreview.href | safe"></iframe>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a [href]="recipePreview.href" class="btn btn-primary" target="_blank">Abrir en otra pestaña</a>
+    </div>
+</ng-template>

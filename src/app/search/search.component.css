@@ -1,0 +1,19 @@
+
+.input-group-prepend {
+    margin-right: -3px;
+} 
+
+.input-group-prepend > select {
+    background-color: #513c40;
+    color: #79cabd;
+    border-color: #513c40;
+}
+
+.input-group-prepend > select:hover {
+    background-color: #79cabd;
+    color: #513c40;
+}
+
+.card {
+    border-color: #513040;
+}

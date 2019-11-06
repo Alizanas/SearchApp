@@ -1,0 +1,38 @@
+<div class="wrapper">
+    
+  <nav #sidebar id="sidebar" [ngClass]="activeMenu == false ? 'active' : ''">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="active">
+            <a [routerLink]="['']">Inicio</a>
+        </li>
+        <li>
+            <a [routerLink]="['/alphabet']">Alfabeto</a>
+        </li>
+    </ul>
+  </nav>
+  
+  <div class="w-100">
+
+    <header>
+      <!-- Sidebar -->
+      <nav id="nav" class="navbar navbar-expand-lg">
+        <button (click)="actionMenu()" type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand mx-auto" href="#">
+          <img src="../assets/logoPuppyLogo.png" width="90" height="35" alt="logo">
+        </a>
+      </nav>
+    </header>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+</div>
+
+

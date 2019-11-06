@@ -1,0 +1,17 @@
+#navTabABC {
+    border: 0;
+}
+#navTabABC > li {
+    border-bottom: 1px solid #dee2e6;
+    
+}
+
+#navTabABC > li > a {
+    background-color: #C0a494;
+    border-color: #513c40;
+}
+
+#navTabABC > li > a.active {
+    background-color: #513c40;
+    color: #C0a494;
+}
